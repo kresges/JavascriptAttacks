@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>XSS App</title>
+
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="host_client.js"></script>
+
+</head>
+
+<body>
+
+<form>
+First name: <input id="firstname" type="text" name="FirstName"><br>
+Last name: <input id="lastname" type="text" name="LastName"><br>
+Comment: <input id="comment" type="text" name="Comment"><br>
+<input id="submit" type="button" value="Submit">
+<input id="refresh" type="button" value="Refresh">
+<input id="delete" type="button" value="Delete Comments">
+</form>
+
+<br>
+
+<div>
+    <b>Comments</b>
+    <ul id="comment_section">
+    </ul>
+
+</div>
+
+
+</body>
+</html>
