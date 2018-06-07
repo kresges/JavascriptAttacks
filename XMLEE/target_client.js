@@ -12,6 +12,7 @@ $(document).ready(function(){
         //     data: input,
         //     dataType: 'text/xml'
         // });
+        $('#before').text(input);
 
         $.post("/parse",
             {
